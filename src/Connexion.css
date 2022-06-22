@@ -1,0 +1,23 @@
+.connexion-input-container{
+}
+
+.connexion-input-container-mail,
+.connexion-input-container-password{
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  width: 15%;
+  justify-content: space-between;
+}
+
+.connexion-input-container-password{
+  align-items: center;
+}
+
+.show-hide-password{
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  cursor: pointer;
+  
+}
