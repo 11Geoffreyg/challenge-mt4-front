@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SignUp } from "./pages/signUp";
-import LogIn from "./pages/login";
-import Configuration from "./pages/configuration";
+import { LogIn } from "./pages/login";
+import { Configuration } from "./pages/configuration";
 
 interface AppProps {
     

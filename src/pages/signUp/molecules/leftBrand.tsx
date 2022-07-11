@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components";
-import { color } from "../../../styles/const";
+import { color, fontSize } from "../../../styles/const";
 import image from "../../../assets/Maskot.svg";
 
 export const LeftBrand = () => {
@@ -20,17 +20,21 @@ const LeftBrandContent = styled.div`
     height: 100vh;
     justify-content: center;
     background-color: ${color.violetLight};
+    gap: 20px;
 `;
 
 const MainText = styled.p`
     padding: 0;
     margin: 0;
     color: ${color.light.PureWhite};
+    font-size: ${fontSize.big};
 `;
 
 const SecondText = styled.p`
     padding: 0;
     margin: 0;
     color: ${color.light.PureWhite};
+    font-size: ${fontSize.normal};
+    font-weight: light;
 `;
 
