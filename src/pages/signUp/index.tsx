@@ -1,5 +1,5 @@
 import React from "react"
-import { LeftBrand } from "./molecules/leftBrand";
+import { LeftBrand } from "../../components/molecules/leftBrand";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { TextField, Button } from '@mui/material';
 import styled from "styled-components";
@@ -11,7 +11,7 @@ export const SignUp = () => {
             <InputContainer>
                 <div>
                     <p>Hello welcome</p>
-                    <p>Peasee enter your details !</p>
+                    <p>Please enter your details !</p>
                 </div>
                 <TextField 
                     label="Name"
@@ -24,10 +24,12 @@ export const SignUp = () => {
                 <TextField 
                     label="Password"
                     variant="standard"
+                    type="password"
                 />
                 <TextField 
                     label="Confirm Password"
                     variant="standard"
+                    type="password"
                 />
                 <Button
                     disabled

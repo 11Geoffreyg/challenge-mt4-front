@@ -1,4 +1,5 @@
 import React from "react"
+import { LeftBrand } from "../../components/molecules/leftBrand";
 import { TextField, Button } from '@mui/material';
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import styled from "styled-components";
@@ -6,10 +7,11 @@ import styled from "styled-components";
 export const LogIn = () => {
     return (
         <SignUpContent>
+            <LeftBrand/>
             <InputContainer>
                 <div>
                     <p>Welcome Back !</p>
-                    <p>Peasee enter your details !</p>
+                    <p>Please enter your details !</p>
                 </div>
                 <TextField 
                     label="Email"

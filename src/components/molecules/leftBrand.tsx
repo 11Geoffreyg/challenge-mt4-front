@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components";
-import { color, fontSize } from "../../../styles/const";
-import image from "../../../assets/Maskot.svg";
+import { color, fontSize } from "../../styles/const";
+import image from "../../assets/Maskot.svg";
 
 export const LeftBrand = () => {
     return (
