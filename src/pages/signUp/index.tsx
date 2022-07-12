@@ -1,10 +1,20 @@
-import React from "react"
+import React, { useState } from "react"
 import { LeftBrand } from "./molecules/leftBrand";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { TextField, Button } from '@mui/material';
 import styled from "styled-components";
+import { UserInfo } from "../../services/api";
 
 export const SignUp = () => {
+let [newUser, setNewUser] = useState("");
+
+const HandleSubmit = () => {
+    UserInfo({newUser })
+        .then(() => {
+            
+        })
+        .catch((err) => console.log(err))
+};
     return (
         <SignUpContent>
             <LeftBrand/>
@@ -33,6 +43,7 @@ export const SignUp = () => {
                     disabled
                     variant="contained"
                     endIcon={<ArrowForward />}
+                    
                 >Continue</Button>
             </InputContainer>
         </SignUpContent>
