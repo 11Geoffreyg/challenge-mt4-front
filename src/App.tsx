@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { SignUp } from "./pages/signUp";
-import { LogIn } from "./pages/login";
-import { Configuration } from "./pages/configuration";
+import { SignUpPage } from "./pages/signUp";
+import { LogInPage } from "./pages/login";
+import { ConfigurationPage } from "./pages/configuration";
 
 interface AppProps {
     
@@ -12,9 +12,9 @@ const App: React.FunctionComponent<AppProps> = (props) => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<SignUp/>}/>
-                <Route path="/login" element={<LogIn/>}/>
-                <Route path="/configuration" element={<Configuration/>}/>
+                <Route path="/" element={<SignUpPage/>}/>
+                <Route path="/login" element={<LogInPage/>}/>
+                <Route path="/configuration" element={<ConfigurationPage/>}/>
             </Routes>
         </BrowserRouter>
     );
