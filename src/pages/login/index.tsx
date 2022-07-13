@@ -43,6 +43,7 @@ export const LogInPage = () => {
                     variant="standard"
                     name="email"
                     onChange={handleChange}
+                    color="secondary"
                 />
                 <TextField 
                     label="Password"
@@ -50,6 +51,7 @@ export const LogInPage = () => {
                     name="password"
                     type="password"
                     onChange={handleChange}
+                    color="secondary"
                 />
                 <Button
                     disabled={!(!!loginInfo.email && !!loginInfo.password)}

@@ -60,6 +60,9 @@ const BootstrapTextField = MUIStyled(TextField)({
       backgroundColor: '#FBD5DF',
       boxShadow: 'none',
     },
+    '&:focus-within label': {
+      top: -5,
+    },
   });
   
 const Title = styled.h1`

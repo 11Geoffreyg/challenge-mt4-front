@@ -64,18 +64,21 @@ export const SignUpPage = () => {
                     variant="standard"
                     name="first_name"
                     onChange={handleChange}
+                    color="secondary"
                 />
                 <TextField 
                     label="Family name"
                     variant="standard"
                     name="last_name"
                     onChange={handleChange}
+                    color="secondary"
                 />
                 <TextField 
                     label="Email"
                     variant="standard"
                     name="email"
                     onChange={handleChange}
+                    color="secondary"
                 />
                 <TextField 
                     label="Password"
@@ -83,12 +86,14 @@ export const SignUpPage = () => {
                     type="password"
                     name="password"
                     onChange={handleChange}
+                    color="secondary"
                 />
                 <TextField 
                     label="Confirm Password"
                     variant="standard"
                     type="password"
                     onChange={handleChangeConfirm}
+                    color="secondary"
                 />
                 <Button
                     disabled={ !checkPassword() || !checkInput() }
