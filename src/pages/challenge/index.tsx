@@ -22,27 +22,11 @@ const [data, setData] = useState({
 
 const [step, setStep] = useState(0)
 
-const nextStep = (stepIndex) => {
-    switch (step) {
-      case 0:
-        setStep(stepIndex || step + 1)
-        break;
-      case 1:
-        CreateInstance(data)
-        setStep(stepIndex || step + 1)
-        break;
-      case 2:
-        setStep(stepIndex || step + 1)
-        break;
-      default:
-        setStep(stepIndex || step + 1)
-    }
-  }
 
-  const steps = ['Instructions', 'Coordonées personnelles', "Let's go !"]
+  const steps = ['challenge1', 'Coordonées personnelles', "Let's go !"]
 
     return (
-        <ConfigurationWrapper>
+        <ChallengeWrapper>
             <TimeLineWrapper>
             <div style={{width: '80%'}}>
             <Stepper activeStep={step}>
@@ -60,20 +44,18 @@ const nextStep = (stepIndex) => {
             </Stepper>
             </div>
             </TimeLineWrapper>
-            <ConfigurationContent>
+            <ChallengeContent>
                 <ContentDisplayerWrapper>
                     <ContentDisplayer setStep={setStep} step={step} nextStep={nextStep}>
-                        <InstructionStep />
-                        <CoordonateStep setData={setData}/> 
-                        <LetsplayStep />
                     </ContentDisplayer>
                 </ContentDisplayerWrapper>
-            </ConfigurationContent>
-        </ConfigurationWrapper>
+            </ChallengeContent>
+        </ChallengeWrapper>
     );
 }
 
 
+  
 
 const ContentDisplayerWrapper = styled.div`
     width: 700px;
@@ -89,7 +71,7 @@ const TimeLineWrapper = styled.div`
     border-radius: 5px;
 `
 
-const ConfigurationWrapper = styled.div`
+const ChallengeWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,7 +82,7 @@ const ConfigurationWrapper = styled.div`
     gap: 20px;
 `
 
-const ConfigurationContent = styled.div`
+const ChallengeContent = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;

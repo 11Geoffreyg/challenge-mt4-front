@@ -1,5 +1,6 @@
 export const color = {
     light: {
+        background1: '#FDF7FA',
         PureWhite: "#ffffff",
     },
     medium: {
@@ -11,6 +12,8 @@ export const color = {
     violetLight: "#6C6EA0",
     violetDark: "#443E64",
     pinkLight: "#FE92AE",
+    pinkLightHovered: "#E17893",
+    pinkBackground: "#AE5D72"
 };
 
 export const fontSize = {
