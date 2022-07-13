@@ -6,6 +6,7 @@ import { TextField, Button } from '@mui/material';
 import styled from "styled-components";
 import { SignIn } from "../../services/api";
 import { color } from "../../styles/const";
+import { styled as MUIStyled } from '@mui/material/styles';
 
 export const SignUpPage = () => {
     let [newUser, setNewUser] = useState({
@@ -96,17 +97,30 @@ export const SignUpPage = () => {
                     onChange={handleChangeConfirm}
                     color="secondary"
                 />
-                <Button
+                <BootstrapButton
                     disabled={ !checkPassword() || !checkInput() }
                     variant="contained"
                     endIcon={<ArrowForward />}
                     onClick={ HandleSubmit }
-                >Continue</Button>
+                >Continue</BootstrapButton>
                 <Text>I already have an account <Link to="/login">Sign in</Link></Text>
             </InputContainer>
         </SignUpContent>
     );
 }
+
+const BootstrapButton = MUIStyled(Button)({
+    boxShadow: 'none',
+    textTransform: 'none',
+    fontSize: 16,
+    lineHeight: 1.5,
+    marginTop: 20,
+    backgroundColor: color.pinkLight,
+    '&:hover': {
+      backgroundColor: color.pinkLightHovered,
+      boxShadow: 'none',
+    },
+  });
 
 
 const Text = styled.div`

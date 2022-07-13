@@ -6,6 +6,7 @@ import ArrowForward from "@mui/icons-material/ArrowForward";
 import styled from "styled-components";
 import { LogIn } from "../../services/api";
 import { color } from "../../styles/const";
+import { styled as MUIStyled } from '@mui/material/styles';
 
 export const LogInPage = () => {
     let [loginInfo, setLoginInfo] = useState({
@@ -54,17 +55,31 @@ export const LogInPage = () => {
                     onChange={handleChange}
                     color="secondary"
                 />
-                <Button
+                <BootstrapButton
                     disabled={!(!!loginInfo.email && !!loginInfo.password)}
                     variant="contained"
                     endIcon={<ArrowForward />}
                     onClick={ HandleSubmit }
-                >Continue</Button>
+                >Continue</BootstrapButton>
                 <Text>I don’t have account <Link to="/">Sign up</Link></Text>
             </InputContainer>
         </SignUpContent>
     );
 }
+
+const BootstrapButton = MUIStyled(Button)({
+    boxShadow: 'none',
+    textTransform: 'none',
+    fontSize: 16,
+    lineHeight: 1.5,
+    marginTop: 20,
+    backgroundColor: color.pinkLight,
+    '&:hover': {
+      backgroundColor: color.pinkLightHovered,
+      boxShadow: 'none',
+    },
+  });
+  
 
 const Text = styled.div`
     margin: 0;
