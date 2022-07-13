@@ -1,29 +1,24 @@
 // @ts-nocheck
 import React, {useState} from "react"
 import styled from "styled-components";
-import { color, fontSize } from "../../styles/const"
-import { TextField, Button } from '@mui/material';
-import ArrowForward from "@mui/icons-material/ArrowForward";
-import {CreateInstance} from '../../services/api'
+import { color } from "../../styles/const"
 import { ContentDisplayer } from "../components/contentDisplayer";
-import { CoordonateStep } from '../configuration/steps/coordonates'
-import { InstructionStep } from '../configuration/steps/instructions'
-import { LetsplayStep } from '../configuration/steps/letsplay'
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import { styled as MUIStyled } from '@mui/material/styles';
 
-export const ConfigurationPage = () => {
+export const ChallengePage = () => {
 const [data, setData] = useState({
     name: '',
     ip: ''
 })
 
+const nextStep = () => {
+    return
+}
+
 const [step, setStep] = useState(0)
-
-
-  const steps = ['challenge1', 'Coordonées personnelles', "Let's go !"]
+  const steps = ['challenge1', 'challenge2', "challenge3"]
 
     return (
         <ChallengeWrapper>
@@ -37,7 +32,7 @@ const [step, setStep] = useState(0)
                 } = {};
                 return (
                     <Step key={label} {...stepProps}>
-                    <StepLabel {...labelProps}>{label}</StepLabel>
+                    <StepLabel StepIconProps={{style: {color: color.pinkLight}}} {...labelProps}>{label}</StepLabel>
                     </Step>
                 );
                 })}

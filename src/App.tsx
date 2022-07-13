@@ -4,6 +4,7 @@ import { SignUpPage } from "./pages/signUp";
 import { LogInPage } from "./pages/login";
 import { ConfigurationPage } from "./pages/configuration";
 import styled from "styled-components";
+import { ChallengePage } from "./pages/challenge/index";
 
 interface AppProps {
     
@@ -19,6 +20,7 @@ const App: React.FunctionComponent<AppProps> = (props) => {
                 <Route path="/" element={<SignUpPage/>}/>
                 <Route path="/login" element={<LogInPage/>}/>
                 {accessToken &&  <Route path="/configuration" element={<ConfigurationPage/>}/>}
+                <Route path="/challenge" element={<ChallengePage/>}/>
             </Routes>
         </BrowserRouter>
         </GlobalStyle>
