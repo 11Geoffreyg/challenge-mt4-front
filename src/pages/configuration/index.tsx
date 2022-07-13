@@ -13,13 +13,14 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import { styled as MUIStyled } from '@mui/material/styles';
+import { useNavigate } from "react-router-dom";
 
 export const ConfigurationPage = () => {
 const [data, setData] = useState({
     name: '',
     ip: ''
 })
-
+let navigate = useNavigate();
 const [step, setStep] = useState(0)
 
 const nextStep = (stepIndex) => {
@@ -32,7 +33,7 @@ const nextStep = (stepIndex) => {
         setStep(stepIndex || step + 1)
         break;
       case 2:
-        setStep(stepIndex || step + 1)
+        navigate("../challenge")
         break;
       default:
         setStep(stepIndex || step + 1)
@@ -52,8 +53,8 @@ const nextStep = (stepIndex) => {
                     optional?: React.ReactNode;
                 } = {};
                 return (
-                    <Step key={label} {...stepProps}>
-                    <StepLabel {...labelProps}>{label}</StepLabel>
+                    <Step key={label}  {...stepProps}>
+                    <StepLabel StepIconProps={{style: {color: color.pinkLight}}} {...labelProps}>{label}</StepLabel>
                     </Step>
                 );
                 })}
