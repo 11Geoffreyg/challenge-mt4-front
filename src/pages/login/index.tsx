@@ -48,6 +48,7 @@ export const LogInPage = () => {
                     label="Password"
                     variant="standard"
                     name="password"
+                    type="password"
                     onChange={handleChange}
                 />
                 <Button
