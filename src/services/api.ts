@@ -7,7 +7,10 @@ export const SignIn = (userInfo: any) => {
         },
         body: JSON.stringify(userInfo),
     })
-    .then((resp) => resp.json())
+    .then((resp) => {
+        if(!resp.ok) throw new Error("bad");
+        resp.json();
+    })
     .then(data => localStorage.setItem('accessToken', data.accessToken));
 };
 
@@ -30,6 +33,21 @@ export const CreateInstance = (data: any) => {
     const TokkyLeToken = localStorage.getItem('accessToken')
     return fetch("http://localhost:5050/instances/", {
         method: "POST",
+        headers: {
+            "Authorization": `Bearer ${TokkyLeToken}`,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+    .then((resp) => {
+        if(!resp.ok) throw new Error("bad");
+        resp.json();
+    })
+}
+
+export const GetChallenge = (data: any) => {
+    const TokkyLeToken = localStorage.getItem('accessToken')
+    return fetch("http://localhost:5050/challenges/1/start", {
         headers: {
             "Authorization": `Bearer ${TokkyLeToken}`,
             "Content-Type": "application/json",

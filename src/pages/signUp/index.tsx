@@ -61,13 +61,13 @@ export const SignUpPage = () => {
                     {isError && <p>Bad Combination please retry !</p>}
                 </div>
                 <TextField 
-                    label="Name"
+                    label="First name"
                     variant="standard"
                     name="first_name"
                     onChange={handleChange}
                 />
                 <TextField 
-                    label="Name"
+                    label="Family name"
                     variant="standard"
                     name="last_name"
                     onChange={handleChange}

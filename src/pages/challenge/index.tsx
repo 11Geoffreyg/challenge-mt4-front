@@ -6,19 +6,21 @@ import { ContentDisplayer } from "../components/contentDisplayer";
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
+import { GetChallenge } from "../../services/api";
 
 export const ChallengePage = () => {
-const [data, setData] = useState({
-    name: '',
-    ip: ''
-})
+const [data, setData] = useState();
+
+useEffect(() => {
+    GetChallenge().then((data) => setData(data));
+}, []);
 
 const nextStep = () => {
     return
 }
 
 const [step, setStep] = useState(0)
-  const steps = ['challenge1', 'challenge2', "challenge3"]
+    const steps = ['challenge1', 'challenge2', "challenge3"]
 
     return (
         <ChallengeWrapper>
