@@ -1,10 +1,11 @@
 import React, { useState, ChangeEvent } from "react"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LeftBrand } from "../../components/molecules/leftBrand";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { TextField, Button } from '@mui/material';
 import styled from "styled-components";
 import { SignIn } from "../../services/api";
+import { color } from "../../styles/const";
 
 export const SignUpPage = () => {
     let [newUser, setNewUser] = useState({
@@ -101,10 +102,17 @@ export const SignUpPage = () => {
                     endIcon={<ArrowForward />}
                     onClick={ HandleSubmit }
                 >Continue</Button>
+                <Text>I already have an account <Link to="/login">Sign in</Link></Text>
             </InputContainer>
         </SignUpContent>
     );
 }
+
+
+const Text = styled.div`
+    margin: 0;
+    color: ${color.medium.Smoke};
+`
 
 const SignUpContent = styled.div`
     display: grid;
