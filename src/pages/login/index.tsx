@@ -1,10 +1,11 @@
 import React, { useState, ChangeEvent } from "react"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LeftBrand } from "../../components/molecules/leftBrand";
 import { TextField, Button } from '@mui/material';
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import styled from "styled-components";
 import { LogIn } from "../../services/api";
+import { color } from "../../styles/const";
 
 export const LogInPage = () => {
     let [loginInfo, setLoginInfo] = useState({
@@ -56,10 +57,17 @@ export const LogInPage = () => {
                     endIcon={<ArrowForward />}
                     onClick={ HandleSubmit }
                 >Continue</Button>
+                <Text>I don’t have account <Link to="/">Sign up</Link></Text>
             </InputContainer>
         </SignUpContent>
     );
 }
+
+const Text = styled.div`
+    margin: 0;
+    color: ${color.medium.Smoke};
+`
+
 
 const SignUpContent = styled.div`
     display: grid;
